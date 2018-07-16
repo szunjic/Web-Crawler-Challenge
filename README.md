@@ -2,6 +2,10 @@
 
 ###  **PLEASE NOTE: I did not create this challenge, therefore this README is not mine. This challenege was part of my interview for Datafiniti. Please see details of the challenege below.**
 
+#### **To run the program: node crawler.js** 
+
+#### **Please read EXTENSIONS.txt to see how I would have built a more efficient crawler given more time and knowledge of building web scrapers** 
+
 ## Purpose
 
 This exercise is designed to test your ability to use object-oriented design principles, data structures and standard algorithms to create a web crawler. We will not only be looking at the data points you have collected from the web, but at the style of your code, its modularity, its extensibility, and ease at which the app can be built and tested. As a small team we believe these principles are a key element of our continued success.
