@@ -1,0 +1,76 @@
+Once your solution is completed please add an EXTENSIONS.txt file to your solution
+that notes how your application could be extended to handle the following:
+ - Domains beyond Amazon.com
+ - Products beyond just simply books.
+
+
+My solution is not complete. 
+I struggled to find the specific data points on Amazon (those beyond book title and url).
+If I had more time and experience with building web crawlers, I think I would have certainly built a fully functioning web crawler.
+
+That being said, I would improve my application by breaking it up into smaller parts.
+I'd include smaller, more specific functions, that could take in different URLs and grab whatever data is needed.
+
+I would separate the code that defines the crawler from the code that uses the crawler (instead of just writing one large script like I did with this challenge).
+
+Instead of putting everything in a single script, I'd create something like crawl-books.js that exports a crawl function and isolates its logic and dependencies, something like: 
+
+// crawl-books.js
+
+var request = require('request');
+var cheerio = require('cheerio');
+var URL = require('url-parse');
+
+function crawlBooks(url, numberOfBooks) {
+   
+}
+
+module.exports = crawl;
+
+And then I would use it in something like app.js, like this:
+
+// app.js
+
+var crawl = require('./crawl.js);
+
+crawl('https://www.amazon.com', 10, function(bookData) {
+    // do what you want with the book data
+});
+
+And then call node app.js to run the program.
+
+
+
+I would also improve my app by breaking up the code that defines the crawler into tiny little parts that have more helpful names. For instance:
+
+// crawl-books.js
+
+function handleBookData () {
+
+}
+
+
+function getBookData() {
+ 
+}
+
+
+function tryUrl(url) {
+    request(listingPage, function(error, response, body) {
+        if (error) {
+             throw error;
+         }
+    }
+}
+
+function crawlBooks(url, numberOfBooks, callback) {
+     tryUrl(url);
+     getBookData(url + '/books', function() {
+         callback();
+     })
+}
+
+module.exports = crawlBooks;
+
+
+Lastly, I have never used any other third party javascript scraping library other than Cheerio, so I would definitely want to learn about others and see how they compare Cheerio.
